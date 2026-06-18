@@ -1,6 +1,6 @@
 {
   "name": "x_ite-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper Functions for X_ITE Extension",
   "main": "dist/x_ite-extension.js",
   "module": "dist/x_ite-extension.js",

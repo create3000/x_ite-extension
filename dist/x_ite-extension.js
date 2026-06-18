@@ -22,7 +22,7 @@
 /************************************************************************/
 var __webpack_exports__ = {};
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ register)
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 function register (callback)
 {
@@ -31,8 +31,22 @@ function register (callback)
    if (X3D)
       callback (X3D);
    else
-      (window [Symbol .for ("X_ITE.extensions")] ??= [ ]) .push (callback);
+      getExtensions () .push (callback);
 };
+
+function getExtensions ()
+{
+   const
+      _extensions = Symbol .for ("X_ITE.extensions"),
+      extensions  = window [_extensions];
+
+   if (Array .isArray (extensions))
+      return extensions;
+
+   return window [_extensions] = [ ];
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (register);
 
 const __webpack_exports__default = __webpack_exports__.A;
 export { __webpack_exports__default as default };
